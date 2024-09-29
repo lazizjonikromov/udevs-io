@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #ffffff;
+  --primary: #1b5bf7;
+  --dark: #18191f;
+  --bgCard: #f4f7ff;
+  --selectedCardBg: #c6d6ff;
+  --darkBgCard: #e0e8ff;
+  --font: "Manrope", sans-serif;
+  --black: #000000;
+  --secondary: #464359;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  max-width: 1170px;
+  overflow: hidden;
+}
+
+.navLink {
+  @apply block py-2 px-3 md:px-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent dark:text-dark font-bold cursor-pointer transition-all duration-100 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-primary text-sm;
+  line-height: 20px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navLink.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+.dropDownLink {
+  @apply flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:px-0 dark:text-dark cursor-pointer text-sm font-bold;
+  position: relative;
+}
+
+.dropDownLink.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+.myBtn {
+  @apply bg-primary text-light rounded-lg hover:scale-105 focus:outline-none font-bold transition-all duration-300 ease-in-out text-sm w-full;
+  line-height: 20px;
+}
+
+.section {
+  @apply w-full h-min py-0 md:py-24 flex justify-center;
+}
+
+.title {
+  @apply max-w-[800px] font-bold text-4xl md:text-6xl text-primary mb-2 block;
+}
+
+.text_service {
+  @apply text-base md:text-2xl font-medium mx-3 md:mx-0 mt-10 md:mt-0 md:mr-16 text-dark leading-8 md:leading-[40px];
+}
+
+.text_portfolio {
+  @apply text-base md:text-xl font-semibold mx-3 md:mx-0 mt-5 md:mt-0 text-secondary opacity-90 leading-8 md:leading-[40px];
+}
+
+.tools_checkbox {
+  @apply w-6 h-6 rounded-full border-2 border-solid border-primary cursor-pointer appearance-none;
+}
+
+.portfolio_icon {
+  @apply flex w-fit gap-2 items-center text-sm mx-3 md:mx-0 leading-7 font-medium px-4 py-1 rounded-[100px] mb-0 md:mb-5;
+}
+
+.work_section {
+  @apply max-w-[1371px] flex w-full gap-8 md:gap-0 md:mt-14 mb-0 mx-auto justify-around flex-col md:flex-row items-start bg-cover bg-top relative;
+}
+
+@media (min-width: 768px) {
+  .work_section {
+    background-image: url('../src/assets/images/work-section.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position-y: 40px;
+  }
+}
+
+.contact_input {
+  @apply w-full h-12 py-3 px-3 text-xl font-medium text-secondary;
+}
+
+.contact_label {
+  font-size: 16px !important;
+  font-weight: 600;
+  line-height: 3.8 !important;
+  transition: font-size 0.2s ease;
+}
+
+.contact_input:focus ~ .contact_label,
+.contact_input:not(:placeholder-shown) ~ .contact_label {
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+}
